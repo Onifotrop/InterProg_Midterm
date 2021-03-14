@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: f11dab55ce260d54385e98d48fde05e4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerAnim: {instanceID: 0}
+  - player: {fileID: 3053432751397596367, guid: 22fc4720f712be14292cd6a0b9d19694,
+      type: 3}
+  - bloodPrefab: {fileID: 469585926403520194, guid: d8d32eca0ac224b4ba84bcadbdf19345,
+      type: 3}
+  - splatter: {instanceID: 0}
+  - skullPrefab: {instanceID: 0}
+  - bonePrefab: {fileID: 2257388550422117032, guid: 022ba10c1658a504b8628f704d2ebca4,
+      type: 3}
+  - brainPrefab: {fileID: 7960828320480558933, guid: e0295efe126ce5f4a87fe0b78c45628a,
+      type: 3}
+  - heartPrefab: {instanceID: 0}
+  - ribsPrefab: {instanceID: 0}
+  - meatPrefab: {fileID: 912618092124681782, guid: cc685e2da75a115408ed409ff7d169a9,
+      type: 3}
+  - veinPrefab: {instanceID: 0}
+  - toothPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
