@@ -65,15 +65,27 @@ public class PlayerControl : MonoBehaviour
     
     void Update()
     {
+        debugPlace();
         currentState.Update(this);
     }
 
+    public void debugPlace()
+    {
+        Debug.Log("Acid = " + inAcid);
+        Debug.Log("Land = " + inLand);
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (isDash == false)
         {
-            if (other.tag == "Disc")
+            if (other.tag == "Spike")
             {
+                ChangeState(stateDie);
+            }
+
+            if (inLand == false && inAcid == true)
+            {
+                print("acid die");
                 ChangeState(stateDie);
             }
         }
@@ -83,6 +95,20 @@ public class PlayerControl : MonoBehaviour
             respawnVector = other.transform.position;
         }
         
+    }
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Wall")
+        {
+            canPress = false;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Wall")
+        {
+            canPress = true;
+        }
     }
 
     public void dieSpawnChunks()

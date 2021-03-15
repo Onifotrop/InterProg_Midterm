@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1831383558550410250}
   - component: {fileID: 1831383558550410249}
   - component: {fileID: 6313172950365708318}
+  - component: {fileID: 8828338922870314054}
   m_Layer: 0
   m_Name: Acid
   m_TagString: Acid
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &8828338922870314054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831383558550410248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8699b67f4c241e1499f8bea82c3c57ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

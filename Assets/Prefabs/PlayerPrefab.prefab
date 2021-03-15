@@ -55,6 +55,7 @@ MonoBehaviour:
   dashSpeeds: 3.5
   dashTime: 1
   isDash: 0
+  respawnVector: {x: 0, y: 0, z: 0}
   playerAnim: {fileID: 3053432751397596363}
   player: {fileID: 3053432751397596367}
   bloodPrefab: {fileID: 912618092124681782, guid: cc685e2da75a115408ed409ff7d169a9,
@@ -159,7 +160,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.04}
