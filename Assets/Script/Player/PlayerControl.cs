@@ -10,21 +10,22 @@ public class PlayerControl : MonoBehaviour
     // IF ALIVE, THEN DO THE PLAYER BEHAVIORS
     public bool alive;
     //this is to restrict the use of x, once pressed x for dash, you have to press again for the next time,
-    public bool canPress;
-    //Customizable player vars
-    public float runSpeed;
-    float dashSpeed;
-    public float counter;
-    public float dashSpeeds;
-    public float dashTime;
-    public bool isDash;
-    public Vector3 respawnVector ;
-    //Bool used for acid
+    private bool canPress;
+    //Dash use and basic movement
+    private float runSpeed;
+    private float dashSpeed;
+    private float counter;
+    private float dashSpeeds;
+    private float dashTime;
+    private bool isDash;
+    //Used to get the Respawner Place for Checkpoint.
+    private Vector3 respawnVector;
+    //Bool used for acid and land detect
     public static bool inAcid = false;
     public static bool inLand = false;
     //Animation stuff
     public Animator playerAnim;
-    //Prefabs
+    //Prefabs for blow up effect
     public GameObject player;
     public GameObject bloodPrefab;
     public GameObject splatter;
@@ -36,33 +37,31 @@ public class PlayerControl : MonoBehaviour
     public GameObject meatPrefab;
     public GameObject veinPrefab;
     public GameObject toothPrefab;
-
-    public CircleCollider2D playerHitbox;
-    public SpriteRenderer sR;
+    
+    private CircleCollider2D playerHitbox;
+    private SpriteRenderer sR;
     public Animator animator;
-
+    //FSM
     private PlayerStateBase currentState;
     public PlayerStateAlive stateAlive = new PlayerStateAlive();
     public PlayerStateDie stateDie = new PlayerStateDie();
 
-    public AudioSource aS;
-    public AudioClip aC;
-    public AudioClip spawn;
-    public AudioClip die;
-    public AudioClip dash;
+    //Audio
+    public AudioSource spawn;
+    public AudioSource die;
+    public AudioSource dash;
     private void Awake()
     {
+        //Get Stuff
         playerHitbox = player.GetComponent<CircleCollider2D>();
         sR = this.GetComponent<SpriteRenderer>();
         animator = this.GetComponent<Animator>();
-        alive = true;
-        aC = aS.clip;
     }
 
     void Start()
     {
-        //Initialize prefabs
-        //alive = true;
+        //Set up basics
+        alive = true;
         canPress = true;
         isDash = false;
         respawnVector = new Vector3(0, 0, 0);
@@ -71,17 +70,21 @@ public class PlayerControl : MonoBehaviour
     
     void Update()
     {
-        debugPlace();
         currentState.Update(this);
     }
 
+    //Used for debug
     public void debugPlace()
     {
-        Debug.Log("Acid = " + inAcid);
-        Debug.Log("Land = " + inLand);
+        //Debug.Log("Acid = " + inAcid);
+        //Debug.Log("Land = " + inLand);
+        Debug.Log("Vector = " + respawnVector);
+        //Debug.Log("Speed = " + dashSpeed);
     }
+    
     void OnTriggerEnter2D(Collider2D other)
     {
+        //Detecting different ground, but not when you are dashing
         if (isDash == false)
         {
             if (other.tag == "Spike")
@@ -95,13 +98,14 @@ public class PlayerControl : MonoBehaviour
                 ChangeState(stateDie);
             }
         }
-        
+        //When you touch the respawn, make it a checkpoint
         if (other.tag == "Respawn")
         {
             respawnVector = other.transform.position;
         }
         
     }
+    //for limiting the wall
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Wall")
@@ -117,12 +121,10 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    //Spawning the meat chunks
     public void dieSpawnChunks()
     {
         alive = false;
-        aC = die;
-        aS.Play();
-        //animator.enabled = false;
         sR.color = Color.red;
         Instantiate(bloodPrefab, this.transform.position, Quaternion.Euler(0, 0, 0));
         Instantiate(splatter, this.transform.position, Quaternion.Euler(0, 0, 0));
@@ -191,12 +193,12 @@ public class PlayerControl : MonoBehaviour
                 playerAnim.SetBool("faceRight",true);
             }
     }
+    //Dash to avoid toxic and spikes
     public void dashWithX()
     {
         if (canPress && Input.GetKey(KeyCode.X))
         {
-            aC = dash;
-            aS.Play();
+            dash.Play();
             counter += 1 * Time.deltaTime;
             if (counter < dashTime)
             {
@@ -240,6 +242,7 @@ public class PlayerControl : MonoBehaviour
 
     public IEnumerator BlowUp()
     {
+        die.Play();
         dieSpawnChunks();
         sR.enabled = false;
         yield return new WaitForSeconds(0f);
@@ -247,6 +250,7 @@ public class PlayerControl : MonoBehaviour
 
     public void respawn()
     {
+        spawn.Play();
         alive = true;
         sR.enabled = true;
         ChangeState(stateAlive);
