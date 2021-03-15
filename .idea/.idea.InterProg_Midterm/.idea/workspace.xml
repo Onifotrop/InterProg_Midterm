@@ -30,9 +30,9 @@
       <option value="$PROJECT_DIR$/Assets/Script/AudioManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/PlayerState/PlayerStateDie.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/PlayerState/PlayerStateAlive.cs" />
-      <option value="$PROJECT_DIR$/Assets/Script/Player/PlayerControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/Map/TextMapping.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/Map/TextToMap.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/Player/PlayerControl.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ploJuHopQLKFAWe0Q3vrWTTw3c" />
@@ -85,6 +85,7 @@
       <updated>1615766972153</updated>
       <workItem from="1615766986453" duration="17776000" />
       <workItem from="1615824998937" duration="1412000" />
+      <workItem from="1615832137041" duration="310000" />
     </task>
     <servers />
   </component>

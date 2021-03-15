@@ -10,16 +10,16 @@ public class PlayerControl : MonoBehaviour
     // IF ALIVE, THEN DO THE PLAYER BEHAVIORS
     public bool alive;
     //this is to restrict the use of x, once pressed x for dash, you have to press again for the next time,
-    private bool canPress;
+    public bool canPress;
     //Dash use and basic movement
-    private float runSpeed;
-    private float dashSpeed;
-    private float counter;
-    private float dashSpeeds;
-    private float dashTime;
-    private bool isDash;
+    public float runSpeed;
+    public float dashSpeed;
+    public float counter;
+    public float dashSpeeds;
+    public float dashTime;
+    public bool isDash;
     //Used to get the Respawner Place for Checkpoint.
-    private Vector3 respawnVector;
+    public Vector3 respawnVector;
     //Bool used for acid and land detect
     public static bool inAcid = false;
     public static bool inLand = false;
@@ -56,12 +56,13 @@ public class PlayerControl : MonoBehaviour
         playerHitbox = player.GetComponent<CircleCollider2D>();
         sR = this.GetComponent<SpriteRenderer>();
         animator = this.GetComponent<Animator>();
+        alive = true;
     }
 
     void Start()
     {
         //Set up basics
-        alive = true;
+        
         canPress = true;
         isDash = false;
         respawnVector = new Vector3(0, 0, 0);
