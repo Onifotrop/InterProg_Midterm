@@ -7,14 +7,18 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Script" t="Include">
-          <e p="BloodControl.cs" t="Include" />
-          <e p="Meat.cs" t="Include" />
-          <e p="PlayerControl.cs" t="Include" />
+          <e p="Player" t="Include">
+            <e p="BloodControl.cs" t="Include" />
+            <e p="Meat.cs" t="Include" />
+            <e p="PlayerControl.cs" t="Include" />
+          </e>
           <e p="PlayerState" t="Include">
             <e p="PlayerStateAlive.cs" t="Include" />
             <e p="PlayerStateBase.cs" t="Include" />
             <e p="PlayerStateDie.cs" t="Include" />
           </e>
+          <e p="TextMapping.cs" t="Include" />
+          <e p="TextToMap.cs" t="Include" />
         </e>
       </e>
       <e p="InterProg_Midterm.sln" t="IncludeFlat" />

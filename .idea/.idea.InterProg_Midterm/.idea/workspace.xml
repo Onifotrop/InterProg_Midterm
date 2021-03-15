@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Script/PlayerState/PlayerStateBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/TextMapping.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17AD9609-AE06-4F2C-9315-931FF97ADCF1/4a/0c1ac75d/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/PlayerState/PlayerStateAlive.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/81A2A079-7F3C-43B2-AABD-7604740BCD48/e7/2e987ddc/Animator.cs" root0="SKIP_HIGHLIGHTING" />
@@ -19,8 +20,11 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Script/PlayerState/PlayerStateBase.cs" />
-      <option value="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/PlayerState/PlayerStateDie.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/PlayerControl.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/TextMapping.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/TextToMap.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/Player/PlayerControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/PlayerState/PlayerStateAlive.cs" />
     </changedPaths>
   </component>
@@ -72,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615766972153</updated>
-      <workItem from="1615766986453" duration="6460000" />
+      <workItem from="1615766986453" duration="11084000" />
     </task>
     <servers />
   </component>

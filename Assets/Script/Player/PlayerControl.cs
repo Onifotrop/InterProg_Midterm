@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -19,7 +20,9 @@ public class PlayerControl : MonoBehaviour
     public float dashTime;
     public bool isDash;
     public Vector3 respawnVector ;
-    
+    //Bool used for acid
+    public static bool inAcid = false;
+    public static bool inLand = false;
     //Animation stuff
     public Animator playerAnim;
     //Prefabs
@@ -74,6 +77,12 @@ public class PlayerControl : MonoBehaviour
                 ChangeState(stateDie);
             }
         }
+        
+        if (other.tag == "Respawn")
+        {
+            respawnVector = other.transform.position;
+        }
+        
     }
 
     public void dieSpawnChunks()
