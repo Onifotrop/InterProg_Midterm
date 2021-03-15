@@ -8,7 +8,6 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     // IF ALIVE, THEN DO THE PLAYER BEHAVIORS
-    //IF DEAD, CREATE THE BLOOD PREFAB, AND DESTROY CURRENT PLAYER PREFAB
     public bool alive;
     //this is to restrict the use of x, once pressed x for dash, you have to press again for the next time,
     public bool canPress;
@@ -37,20 +36,27 @@ public class PlayerControl : MonoBehaviour
     public GameObject meatPrefab;
     public GameObject veinPrefab;
     public GameObject toothPrefab;
-    //Get stuff
+
     public CircleCollider2D playerHitbox;
     public SpriteRenderer sR;
     public Animator animator;
-    //public ParticleSystem bloodBurst;
+
     private PlayerStateBase currentState;
     public PlayerStateAlive stateAlive = new PlayerStateAlive();
     public PlayerStateDie stateDie = new PlayerStateDie();
+
+    public AudioSource aS;
+    public AudioClip aC;
+    public AudioClip spawn;
+    public AudioClip die;
+    public AudioClip dash;
     private void Awake()
     {
         playerHitbox = player.GetComponent<CircleCollider2D>();
         sR = this.GetComponent<SpriteRenderer>();
         animator = this.GetComponent<Animator>();
         alive = true;
+        aC = aS.clip;
     }
 
     void Start()
@@ -114,6 +120,8 @@ public class PlayerControl : MonoBehaviour
     public void dieSpawnChunks()
     {
         alive = false;
+        aC = die;
+        aS.Play();
         //animator.enabled = false;
         sR.color = Color.red;
         Instantiate(bloodPrefab, this.transform.position, Quaternion.Euler(0, 0, 0));
@@ -187,6 +195,8 @@ public class PlayerControl : MonoBehaviour
     {
         if (canPress && Input.GetKey(KeyCode.X))
         {
+            aC = dash;
+            aS.Play();
             counter += 1 * Time.deltaTime;
             if (counter < dashTime)
             {

@@ -18,6 +18,8 @@ public class PlayerStateDie : PlayerStateBase
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            control.aC = control.spawn;
+            control.aS.Play();
             control.respawn();
         }
     }
