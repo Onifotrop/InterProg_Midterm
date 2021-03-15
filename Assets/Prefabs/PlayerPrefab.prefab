@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3053432751397596361}
   - component: {fileID: 2952335176577561069}
   - component: {fileID: 3053432751397596362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -54,19 +54,31 @@ MonoBehaviour:
   counter: 0
   dashSpeeds: 3.5
   dashTime: 1
-  gameManager: {fileID: 0}
+  isDash: 0
   playerAnim: {fileID: 3053432751397596363}
   player: {fileID: 3053432751397596367}
-  bloodPrefab: {fileID: 912618092124681782, guid: cc685e2da75a115408ed409ff7d169a9, type: 3}
+  bloodPrefab: {fileID: 912618092124681782, guid: cc685e2da75a115408ed409ff7d169a9,
+    type: 3}
   splatter: {fileID: 469585926403520194, guid: d8d32eca0ac224b4ba84bcadbdf19345, type: 3}
-  skullPrefab: {fileID: 3561965773613112882, guid: f0d361d0373da9b4e9b2852b8ceb004a, type: 3}
-  bonePrefab: {fileID: 2257388550422117032, guid: 022ba10c1658a504b8628f704d2ebca4, type: 3}
-  brainPrefab: {fileID: 7960828320480558933, guid: e0295efe126ce5f4a87fe0b78c45628a, type: 3}
-  heartPrefab: {fileID: 3125239376292013584, guid: 5886195b356732e439104a3d1ed83387, type: 3}
-  ribsPrefab: {fileID: 722682756830352061, guid: 4392c3cb3d3b3474bbd1864d9dbe3fad, type: 3}
-  meatPrefab: {fileID: 7991272508538289448, guid: 5b78543e246b06841bc5cbef69c004b9, type: 3}
-  veinPrefab: {fileID: 3495096664767761199, guid: 02d65e9979ab8c7429787dcbc6e4587f, type: 3}
-  toothPrefab: {fileID: 8481710027237151837, guid: 8945fe703b568314cae5b22eb31096c2, type: 3}
+  skullPrefab: {fileID: 3561965773613112882, guid: f0d361d0373da9b4e9b2852b8ceb004a,
+    type: 3}
+  bonePrefab: {fileID: 2257388550422117032, guid: 022ba10c1658a504b8628f704d2ebca4,
+    type: 3}
+  brainPrefab: {fileID: 7960828320480558933, guid: e0295efe126ce5f4a87fe0b78c45628a,
+    type: 3}
+  heartPrefab: {fileID: 3125239376292013584, guid: 5886195b356732e439104a3d1ed83387,
+    type: 3}
+  ribsPrefab: {fileID: 722682756830352061, guid: 4392c3cb3d3b3474bbd1864d9dbe3fad,
+    type: 3}
+  meatPrefab: {fileID: 7991272508538289448, guid: 5b78543e246b06841bc5cbef69c004b9,
+    type: 3}
+  veinPrefab: {fileID: 3495096664767761199, guid: 02d65e9979ab8c7429787dcbc6e4587f,
+    type: 3}
+  toothPrefab: {fileID: 8481710027237151837, guid: 8945fe703b568314cae5b22eb31096c2,
+    type: 3}
+  playerHitbox: {fileID: 0}
+  sR: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!212 &3053432751397596366
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -82,7 +94,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -107,7 +118,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -6251451809504726511, guid: e08c1ed94a63f5340aa78720a5910491, type: 3}
+  m_Sprite: {fileID: -6251451809504726511, guid: e08c1ed94a63f5340aa78720a5910491,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +127,7 @@ SpriteRenderer:
   m_Size: {x: 0.55, y: 0.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &3053432751397596363
